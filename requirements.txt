@@ -1,7 +1,0 @@
-Flask
-Bootstrap-Flask
-Flask-WTF
-WTForms
-Flask-SQLAlchemy
-SQLAlchemy
-email-validator
