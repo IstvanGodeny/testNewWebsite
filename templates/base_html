@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Istvan's Portfolio Website
+{% endblock %}
+
+{% block script %}{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block content %}
+
+{% endblock %}

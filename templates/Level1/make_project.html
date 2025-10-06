@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block title %}
+    Make Project
+{% endblock %}
+
+{% block link %}
+
+{% endblock %}
+
+{% block script %}
+{# CDN CKEditor #}
+{#<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/47.0.0/ckeditor5.css">#}
+{#<script src="https://cdn.ckeditor.com/ckeditor5/47.0.0/ckeditor5.umd.js"></script>#}
+
+{# Shelf hosted CKEditor 5 #}
+<link rel="stylesheet" href=" {{ url_for('static', filename='ckeditor5/ckeditor5.css') }}">
+<script src="{{ url_for('static', filename='ckeditor5/ckeditor5.umd.js') }}"></script>
+
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{%block nav_items%}
+
+        <li class="nav-item me-5">
+            <a class="nav-link"  href="{{url_for('home')}}">Home</a>
+        </li>
+
+        <li class="nav-item me-5">
+            <a class="nav-link"  href="{{url_for('list_project')}}">List and Change Projects</a>
+        </li>
+
+{%endblock%}
+
+{% block content %}
+
+    <main class="main-position">
+        <div class="messageform">
+            
+            {# CKEditor 4.22.1#}
+            {#{ ckeditor.load() }#}
+            {#{ render_form(project_form) }#}
+            {#{ ckeditor.config(name="description") }#}
+
+            {# CKEditor 5#}
+            {{ render_form(project_form) }}
+
+            
+
+           
+            
+        </div>
+    </main>
+
+{% endblock %}

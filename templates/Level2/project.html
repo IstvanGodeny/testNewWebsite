@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    {%for project in all_projects:%}
+        {% if active_page == project.name %}
+
+            {{project.title}}
+
+        {%endif%}
+    {%endfor%}
+{% endblock %}
+
+{%block nav_items%}
+    {%for project in all_projects:%}
+        {% if active_page == project.name %}
+
+            <li class="nav-item me-5">
+                <a class="nav-link" href="{{url_for('home')}}">Home</a>
+            </li>
+            {%if project.video:%}
+            <li class="nav-item me-5">
+                <a class="nav-link" href="#screen_recording">Screen Recording</a>
+            </li>
+            {%endif%}
+            {%if project.description:%}
+            <li class="nav-item me-5">
+                <a class="nav-link" href="#description">Description</a>
+            </li>
+            {%endif%}
+        {%endif%}
+    {%endfor%}
+{%endblock%}
+
+{% block content %}
+    <main class="main-position">
+
+        {%for project in all_projects:%}
+            {%if active_page==project.name:%}
+
+                <div class="ms-6">
+                    <!-- Title -->
+                    <div>
+                        <h1>
+                            _> {{project.title}}
+                        </h1>
+                    </div>
+
+                    <!-- Screenshots, Screen Recordings -->
+                    {%if project.video:%}
+                    <div>
+                        <h3 id="screen_recording" class="mb-4" style="margin-top: 2rem; padding-top: 4rem;">Screen Recording</h3>
+                        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+                            <iframe
+                                src="{{project.video}}"
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen
+                                loading="lazy"
+                                title="{{project.title}} - Screen recording">
+                            </iframe>
+                        </div>
+                    </div>
+                    {%endif%}
+                    
+                    {%if project.github:%}
+                        <div class="mt-5 row mb-3">
+                            <div class="col-auto">
+                                <span>
+                                    <img src="{{ url_for('static', filename='assets/svg/github.svg') }}" width="25" height="25" alt="SVG Icon">
+                                </span>
+                            </div>
+                            <div class="col">
+                                <h4>
+                                    <a class="link-text linkIcon" href="{{project.github}}" target="_blank" style="text-decoration: none">Check on GitHub
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <g id="SVGRepo_iconCarrier"> <polygon points="102.296,59.957 42.264,119.99 25.605,103.34 85.639,43.299 "/> <polygon  points="85.74,76.71 25.715,16.653 42.373,0.011 102.391,60.067 "/> </g>
+                                        </svg>
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    {%endif%}
+
+                    <!-- Description -->
+                    {%if project.description:%}
+                        <div id="description" style="margin-top: 5rem; margin-bottom: 8rem;">
+                            <h2 class="mb-4">Description</h2>
+                            <div class="p_description ck-content">
+                                {{project.description|safe}}
+                            </div>
+                        </div>
+                    {%endif%}
+
+                </div>
+
+            {%endif%}
+        {%endfor%}
+
+    </main>
+{% endblock %}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">-->
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='assets/svg/favicon.svg') }}" type="image/x-icon">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap .css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Local .css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Lotti .js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.14/lottie.min.js"></script>
+
+    
+
+    {% block link %}{% endblock %}
+
+    <!-- Custom script -->
+    {% block script %}{% endblock %}
+
+    <!-- Custom style -->
+    {% block style %}{% endblock %}
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+    <div id="home" style="position: relative; top:-1px; height:1px;"></div>
+
+    <div id="backgroundAnimation"></div>
+
+    <div class="container wrapper">
+        <nav class="navbar navbar-expand-xl fixed-top pt-3" id="mainNav">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation items -->
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <!-- Uniq nav items for specific pages -->
+                        {% block nav_items%}{%endblock%} 
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <!-- Content -->
+            {% block content %}{% endblock %}
+        </div>
+
+        <div id="footer" class="footer-box">
+            <footer class="footer-content text-center">
+                <span class="">© {{ year }} Istvan Godeny | Designed by: ©MonaDesigns</span>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Slide-over Panel -->
+    <div id="overlay" class="overlay" hidden></div>
+    <aside id="panel" class="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>
+        <header class="panel-header">
+            <h1 id="panel-title"></h1>
+            <button class="btn btn-custom" id="closeBtn" aria-label="Close">✕</button>
+        </header>
+        <div class="panel-content" id="panelContent" aria-live="polite"></div>
+    </aside>
+
+    <!-- Bootstrap .js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Local .js -->
+    <script src="{{ url_for('static', filename='js/main.js') }}" ></script>
+</body>
+</html>

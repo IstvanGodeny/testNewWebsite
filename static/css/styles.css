@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+/* Colors: */
+    --green-0: #000303;
+    --green-1: #3FB397;
+    --green-2: #4ECEAD;
+    --green-3: #AEDACC;
+    --green-4: #A8D8CA;
+    --green-5: #003333;
+    --green-6: #4DE8A5;     /* SVG green */
+
+    --body-background-color: var(--green-0);
+    --body-text-color: var(--green-4);
+
+/* Fonts */
+    --font-sans-serif: "IBM Plex Sans", sans-serif;
+    --font-sans-serif-condensed: "IBM Plex Sans Condensed", sans-serif;
+    --font-weight-regular: 400;       /* weight: 400*/
+    --font-weight-semibold: 600;      /* weight: 600*/
+    --font-weight-bold: 700;      /* weight: 700*/
+
+    --font-size-12: 0.75rem;       /* default font-size: 16px --> 16 x 0.75 = 12px */
+    --font-size-14: 0.875rem;       /* default font-size: 16px --> 16 x 0.875 = 14px */
+    --font-size-16: 1rem;           /* default font-size: 16px --> 16 x 1 = 16px */
+    --font-size-18: 1.125rem;           /* default font-size: 16px --> 16 x 1.125 = 18px */
+    --font-size-20: 1.25rem;           /* default font-size: 16px --> 16 x 1.25 = 20px */
+    --font-size-22: 1.375rem;       /* default font-size: 16px --> 16 x 1.375 = 22px */
+    --font-size-24: 1.5rem;       /* default font-size: 16px --> 16 x 1.5 = 24px */
+    --font-size-26: 1.625rem;      /* default font-size: 16px --> 16 x 1.625 = 26px */
+    --font-size-28: 1.75rem;      /* default font-size: 16px --> 16 x 1.75 = 28px */
+    --font-size-30: 1.875rem;      /* default font-size: 16px --> 16 x 1.875 = 30px */
+    --font-size-40: 2.5rem;     /* default font-size: 16px --> 16 x 2.5 = 40px*/
+    --font-size-60: 3.75rem;     /* default font-size: 16px --> 16 x 3.75 = 60px*/
+    --font-size-80: 5rem;       /* default font-size: 16px --> 16 x 5 = 80px*/
+
+    --feature-icon-bg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g id="Group_4" data-name="Group 4" transform="translate(-1059 -605)"><rect id="Rectangle_7" data-name="Rectangle 7" width="60" height="60" rx="5" transform="translate(1059 605)" fill="%23aedacc"/><g id="code" transform="translate(1065 611)"><path id="Path_1" data-name="Path 1" d="M46,24,35.1,37,32,34.42,40.78,24,32,13.58,35.1,11ZM16,13.58,12.9,11,2,24,12.9,37,16,34.42,7.22,24Zm.9,29.22,3.86,1.04L31.1,5.2,27.24,4.16Z" fill="%23000303"/><path id="Path_2" data-name="Path 2" d="M0,0H48V48H0Z" fill="none"/></g></g></svg>');
+
+    --ck-content-image-style-spacing: 1.5rem;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: var(--body-background-color);
+    color: var(--body-text-color);
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+
+/* Navbar custom */
+.navbar {
+    --bs-navbar-padding-x: 0;                   /* navbar padding from left and right */
+    --bs-navbar-padding-y: 0.5rem;             /* navbar padding from top and bottom */
+    --bs-navbar-color: var(--body-text-color)   /* navbar text color */
+
+    --bs-navbar-nav-link-padding-x: 1rem;   /* Space between the links*/
+
+    --bs-navbar-toggler-padding-y: 0.25rem;        /* distance between menu icon and top/bottom of the border */
+    --bs-navbar-toggler-padding-x: 0.25rem;    /* distance between manu icon and left/right side of the border */
+    --bs-navbar-toggler-font-size: 1.5rem;    /* Hamburger menu icon size 2rem = 32px */
+    /* SVG for Hamburger menu ↓ */
+    --bs-navbar-toggler-icon-bg: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="utf-8"%3F><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg width="800px" height="800px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><path stroke="%23A4D5C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8h15M5 16h22M5 24h22M5 11l3-3-3-3"/></svg>');
+    --bs-navbar-toggler-border-color: var(--body-text-color);   /* Border color of the hamburger menu */
+    --bs-navbar-toggler-border-radius: 0.5rem;      /* Radius of the border's corner */
+    --bs-navbar-toggler-focus-width: 0.1rem;        /* Border width when pressed */
+
+    /* position: relative;                             /* positioning the menu elements */
+    padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);   /* add the padding */
+    transition: top 0.3s;
+    background: var(--green-0);
+    opacity: 1;
+}
+
+.navbar-nav {
+    --bs-nav-link-color: var(--bs-navbar-color);                /* navbar text color */
+    --bs-nav-link-hover-color: white;                           /* Navbar menu hover color */
+    display: flex;
+    flex-direction: column;
+    padding-left: 0rem;
+    margin-bottom: 0rem;
+}
+
+.nav-link {
+    font-size: var(--font-size-22);             /* Navigation bar menu link's size */
+    font-weight: var(--font-weight-semibold);   /* Navigation bar menu link's weight */
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    color: white;
+}
+
+
+/** Responsive elements **/
+/* Paragraph */
+p { font-size: var(--font-size-16); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+.p-width-1 { width: 29rem;}
+.p-width-2 { width: 21rem;}
+.p-width-3 { width: 23rem;}
+
+h1 { font-size: var(--font-size-40); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+h2 { font-size: var(--font-size-30); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+h3 { font-size: var(--font-size-22); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+h4 { font-size: var(--font-size-18); font-family: var(--font-sans-serif); font-weight: var(--font-weight-semibold)}
+
+li { font-size: var(--font-size-16); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular) }
+
+td {padding-right: 1.5rem;}
+
+.link-text { font-size: var(--font-size-16); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold); color: var(--green-2)}
+
+.card-custom-width { width: 27rem; }
+.card-custom-height { height: 27rem; }
+
+.btn-custom-text { font-size: var(--font-size-18) }
+.btn-custom-text-2 { font-size: var(--font-size-18) }
+
+.main-position { margin: 2rem 0rem 0rem 0rem } /* top right bottom left */
+.ms-6 { margin-left: 1rem; }
+
+.contact-text { font-size: var(--font-size-22);}
+
+.intro {height: 70vh; display: grid; align-items: center; }
+.scroll-down { bottom: 40px;}
+
+#backgroundAnimation { position: fixed; top: 0; left: 00px; width: 100%; height: 100%; opacity: 0.15; z-index: -1;}
+#scrollAnimation { position: relative; top: 100px; left: 200px; width: 8%; height: 8%; opacity: 0.8; z-index: -1;}
+#submit {font-size: var(--font-size-18)}
+#appIcon {width: 30px; height: 30px;}
+
+@media (min-width: 576px) {                                         /* Small screens */
+    p { font-size: var(--font-size-18); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+    .p-width-1 { width: 29rem; }
+    .p-width-2 { width: 23rem; }
+    .p-width-3 { width: 23rem; }
+
+    h1 { font-size: var(--font-size-40); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h2 { font-size: var(--font-size-30); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h3 { font-size: var(--font-size-24); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h4 { font-size: var(--font-size-20); font-family: var(--font-sans-serif); font-weight: var(--font-semibold-bold)}
+
+    li { font-size: var(--font-size-18); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+
+    td {padding-right: 1.5rem;}
+
+    .link-text { font-size: var(--font-size-18); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold); color: var(--green-2)}
+
+    .card-custom-width { width: 29rem; }
+    .card-custom-height { height: 29rem; }
+
+    .btn-custom-text { font-size: var(--font-size-20) }
+    .btn-custom-text-2 { font-size: var(--font-size-18) }
+
+    .main-position { margin: 4rem 0rem 0rem 0.5rem }
+    .ms-6 { margin-left: 1rem; }
+
+    .contact-text { font-size: var(--font-size-24);}
+    
+    .intro {height: 65vh;}
+    .scroll-down { bottom: 40px;}
+
+    #backgroundAnimation { position: fixed; top: 0; left: 00px; width: 100%; height: 100%; opacity: 0.15; z-index: -1;}
+    #scrollAnimation { position: relative; top: 100px; left: 225px; width: 8%; height: 8%; opacity: 0.8; z-index: -1;}
+    #submit {font-size: var(--font-size-20)}
+    #appIcon {width: 30px; height: 30px;}
+}
+
+@media (min-width: 768px) {                                         /* Medium screens */
+    p { font-size: var(--font-size-20); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+    .p-width-1 { width: 30rem; }
+    .p-width-2 { width: 25rem; }
+    .p-width-3 { width: 23rem;}
+
+    h1 { font-size: var(--font-size-40); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h2 { font-size: var(--font-size-30); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h3 { font-size: var(--font-size-26); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h4 { font-size: var(--font-size-22); font-family: var(--font-sans-serif); font-weight: var(--font-semibold-bold)}
+
+    li { font-size: var(--font-size-20); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+
+    td {padding-right: 2.5rem;}
+
+    .link-text { font-size: var(--font-size-20); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold); color: var(--green-2)}
+
+    .card-custom-width { width: 32rem; }
+    .card-custom-height { height: 32rem; }
+
+    .btn-custom-text { font-size: var(--font-size-22) }
+    .btn-custom-text-2 { font-size: var(--font-size-18) }
+
+    .main-position { margin: 6rem 0rem 0rem 1rem }
+    .ms-6 { margin-left: 2rem; }
+
+    .contact-text { font-size: var(--font-size-26);}
+
+    .intro {height: 65vh;}
+    .scroll-down { bottom: 40px;}
+
+    #backgroundAnimation { position: fixed; top: 0; left: 00px; width: 100%; height: 100%; opacity: 0.15; z-index: -1;}
+    #scrollAnimation { position: relative; top: 100px; left: 300px; width: 8%; height: 8%; opacity: 0.8; z-index: -1;}
+    #submit {font-size: var(--font-size-22)}
+    #appIcon {width: 40px; height: 40px;}
+}
+
+@media (min-width: 992px) {                                        /* Large screens */
+    p { font-size: var(--font-size-22); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+    .p-width-1 { width: 30rem; }
+    .p-width-2 { width: 27rem; }
+    .p-width-3 { width: 23rem; }
+
+    h1 { font-size: var(--font-size-60); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h2 { font-size: var(--font-size-40); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h3 { font-size: var(--font-size-26); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h4 { font-size: var(--font-size-22); font-family: var(--font-sans-serif); font-weight: var(--font-semibold-bold)}
+
+    li { font-size: var(--font-size-22); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+
+    td {padding-right: 3.5rem;}
+
+    .link-text { font-size: var(--font-size-22); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold); color: var(--green-2)}
+
+    .card-custom-width { width: 35rem; }
+    .card-custom-height { height: 35rem; }
+
+    .btn-custom-text { font-size: var(--font-size-24) }
+    .btn-custom-text-2 { font-size: var(--font-size-60) }
+
+    .main-position { margin: 8rem 0rem 0rem 1.5rem }
+    .ms-6 { margin-left: 4rem; }
+
+    .contact-text { font-size: var(--font-size-28);}
+
+    .intro {height: 60vh;}
+    .scroll-down { bottom: 40px;}
+
+    #backgroundAnimation { position: fixed; top: 0; left: 100px; width: 100%; height: 100%; opacity: 0.15; z-index: -1;}
+    #scrollAnimation { position: relative; top: 100px; left: 400px; width: 8%; height: 8%; opacity: 0.8; z-index: -1;}
+    #submit {font-size: var(--font-size-24)}
+    #appIcon {width: 50px; height: 50px;}
+}
+
+@media (min-width: 1200px) {                                        /* Extra large screens */
+    p { font-size: var(--font-size-22); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+    .p-width-1 { width: 33rem; }
+    .p-width-2 { width: 19rem; }
+    .p-width-3 { width: 23rem; }
+
+    h1 { font-size: var(--font-size-80); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h2 { font-size: var(--font-size-60); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h3 { font-size: var(--font-size-40); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold)}
+    h4 { font-size: var(--font-size-22); font-family: var(--font-sans-serif); font-weight: var(--font-semibold-bold)}
+
+    li { font-size: var(--font-size-22); font-family: var(--font-sans-serif-condensed); font-weight: var(--font-weight-regular)}
+
+    td {padding-right: 5rem;}
+
+    .link-text { font-size: var(--font-size-22); font-family: var(--font-sans-serif); font-weight: var(--font-weight-bold); color: var(--green-2)}
+
+    .card-custom-width { width: 35rem; }
+    .card-custom-height { height: 35rem; }
+
+    .btn-custom-text { font-size: var(--font-size-26) }
+
+    .main-position { margin: 10rem 0rem 0rem 2rem }
+    .ms-6 { margin-left: 6rem; }
+
+    .contact-text { font-size: var(--font-size-30);}
+
+    .intro {height: 70vh;}
+    .scroll-down { bottom: 40px;}
+
+    #backgroundAnimation { position: fixed; top: 0; left: 250px; width: 100%; height: 100%; opacity: 0.15; z-index: -1; }
+    #scrollAnimation { position: relative; top: 100px; left: 600px; width: 8%; height: 8%; opacity: 0.8; z-index: 1;}
+    #submit {font-size: var(--font-size-26)}
+    #appIcon {width: 60px; height: 60px;}
+}
+
+
+/* Button custom */
+.btn-custom {
+    --bs-btn-padding-x: 1.5rem;                                         /* Button text padding-x */
+    --bs-btn-padding-y: 0.75rem;                                         /* Button text padding-y */
+    --bs-btn-font-family: var(--font-sans-serif);                       /* Button text font family */
+    --bs-btn-font-size: ;                                               /* Button text font size */
+    --bs-btn-font-weight: var(--font-weight-bold);                      /* Button text font weight */
+    --bs-btn-line-height: 1;                                            /* ??? */
+    --bs-btn-color: var(--green-0);                                     /* Button text color */
+    --bs-btn-bg: var(--green-2);                                        /* Button background color */
+    --bs-btn-border-color: var(--green-2);                              /* Button border color */
+    --bs-btn-border-width: 0.10rem;                                     /* Button border width */
+    --bs-btn-border-radius: 0.25rem;                                    /* Button border radius */
+    --bs-btn-hover-color: var(--green-0);                               /* Button text color for hovering*/
+    --bs-btn-hover-bg: var(--green-1);                                  /* Button background for hovering */
+    --bs-btn-hover-border-color: var(--green-1);                        /* Button border color for hovering */
+    --bs-btn-focus-shadow-rgb: 49,132,253;                              /* ??? */
+    --bs-btn-active-color: #fff;                                        /* Button text color when pressed */
+    --bs-btn-active-bg: var(--green-1);                                 /* Button bg color when pressed */
+    --bs-btn-active-border-color: var(--green-1);                       /* Button border color when pressed */
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);       /* ??? */
+    --bs-btn-disabled-color: #fff;                                      /* Button text color when disabled */
+    --bs-btn-disabled-bg: #0d6efd;                                      /* Button bg color when disabled */
+    --bs-btn-disabled-border-color: #0d6efd                             /* Button border color when disabled */
+    --bs-btn-disabled-opacity: 0.65;                                    /* Button opacity when disabled */
+    --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),0 1px 1px rgba(0, 0, 0, 0.075);    /* ??? */
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);              /* ??? */
+
+    display: inline-block;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    font-family: var(--bs-btn-font-family);
+    /* font-size: var(--bs-btn-font-size); */
+    font-weight: var(--bs-btn-font-weight);
+    line-height: var(--bs-btn-line-height);
+    color: var(--bs-btn-color);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    background-color: var(--bs-btn-bg);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+
+/* Card custom */
+.card-custom {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-title-color: ;
+    --bs-card-subtitle-color: ;
+    --bs-card-border-width: 0.2rem;                             /* Card border width */
+    --bs-card-border-color: var(--green-1);                     /* Card border color */
+    --bs-card-border-radius: 0.7rem;                            /* Card border radius */
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-width: ;                                   /* Card width */
+    --bs-card-height: ;                                  /* Card height */
+    --bs-card-color: var(--green-4);
+    --bs-card-bg: var(--green-0);
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: auto;                                              /* Card height */
+    width: 100%;                                                /* Card width */
+    color: var(--green-4);                                                      /* Card text color */
+    word-wrap: break-word;
+    /*background-color: var(--bs-card-bg);                                        /* Card bg color */
+    background-color: transparent;                                        /* Card bg color */
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);      /* Card border setup */
+    border-radius: var(--bs-card-border-radius);                                /* Card border radius */
+    opacity: 1;
+}
+
+
+/* Footer */
+.footer-box {
+    padding-top: 2rem;
+    padding-bottom: 0.75rem;
+}
+
+.footer-content {
+    font-family: var(--font-sans-serif);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-16);
+}
+
+/* Icon container, positioning */
+.icon-container {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly between items */
+    width: 100%; /* Adjust based on your design */
+    margin: 20px auto; /* Centers the container horizontally */
+}
+
+/* Icon hover text */
+[data-tooltip]:hover::after {
+  display: block;
+  position: absolute;
+  content: attr(data-tooltip);
+  border: 0px solid black;
+  background: --green-0;
+  padding: .25em;
+  font-family: var(--font-sans-serif);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-16);
+}
+
+/* Horizontal Line Style */
+hr {
+    border-width: 5px;
+    color: var(--green-4)
+}
+
+img.screenshots {
+    height: auto;
+    width: auto;
+    border: 3px solid #A8D8CA;
+    border-radius: 10px;
+}
+
+a {
+    color: var(--green-4);
+}
+
+/* Form style */
+.messageform input {
+    margin-top: 0.5rem;
+    font-size: var(--font-size-16);
+    font-family: var(--font-sans-serif);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--green-3);
+    color: black;
+}
+.messageform input:focus{
+    background-color: #fff;
+    color: var(--green-0)
+}
+
+.messageform label {
+    margin-top: 1rem;
+    font-size: var(--font-size-20);
+    font-family: var(--font-sans-serif);
+    font-weight: var(--font-weight-semibold);
+}
+
+.messageform textarea{
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    height: 150px;
+    font-size: var(--font-size-16);
+    font-family: var(--font-sans-serif-condensed);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--green-3);
+    color: black;
+}
+.messageform textarea:focus {
+    background-color: #fff;
+    color: var(--green-0)
+}
+
+/* Form button style */
+#submit {
+    --bs-btn-padding-x: 1.5rem;                                         /* Button text padding-x */
+    --bs-btn-padding-y: 0.75rem;                                         /* Button text padding-y */
+    --bs-btn-font-family: var(--font-sans-serif);                       /* Button text font family */
+    --bs-btn-font-size: ;                                               /* Button text font size */
+    --bs-btn-font-weight: var(--font-weight-bold);                      /* Button text font weight */
+    --bs-btn-line-height: 1;                                            /* ??? */
+    --bs-btn-color: var(--green-0);                                     /* Button text color */
+    --bs-btn-bg: var(--green-2);                                        /* Button background color */
+    --bs-btn-border-color: var(--green-2);                              /* Button border color */
+    --bs-btn-border-width: 0.10rem;                                     /* Button border width */
+    --bs-btn-border-radius: 0.25rem;                                    /* Button border radius */
+    /*--bs-btn-hover-color: var(--green-0);                               /* Button text color for hovering*/
+    /*--bs-btn-hover-bg: var(--green-1);                                  /* Button background for hovering */
+    /*--bs-btn-hover-border-color: var(--green-1);                        /* Button border color for hovering */
+    --bs-btn-focus-shadow-rgb: 49,132,253;                              /* ??? */
+    /*--bs-btn-active-color: #fff;                                        /* Button text color when pressed */
+    /*--bs-btn-active-bg: var(--green-1);                                 /* Button bg color when pressed */
+    /*--bs-btn-active-border-color: var(--green-1);                       /* Button border color when pressed */
+    /*--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);       /* ??? */
+    --bs-btn-disabled-color: #fff;                                      /* Button text color when disabled */
+    --bs-btn-disabled-bg: #0d6efd;                                      /* Button bg color when disabled */
+    --bs-btn-disabled-border-color: #0d6efd                             /* Button border color when disabled */
+    --bs-btn-disabled-opacity: 0.65;                                    /* Button opacity when disabled */
+    --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),0 1px 1px rgba(0, 0, 0, 0.075);    /* ??? */
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);              /* ??? */
+
+    display: inline-block;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    font-family: var(--bs-btn-font-family);
+    /* font-size: var(--bs-btn-font-size); */
+    font-weight: var(--bs-btn-font-weight);
+    line-height: var(--bs-btn-line-height);
+    color: var(--bs-btn-color);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    background-color: var(--bs-btn-bg);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+#submit:hover {
+    color: var(--green-0);                                      /* Button text color for hovering*/
+    background-color: var(--green-1);                           /* Button background for hovering */
+    border-color: var(--green-1);                               /* Button border color for hovering */
+}
+#submit:active {
+    background-color: var(--green-1);                           /* Button bg color when pressed */
+    border-color: var(--green-1);                               /* Button border color when pressed */
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);         /* ??? */
+    color: white;
+}
+
+/* Card for apllications */
+#appCard{
+    border-color: transparent;
+    padding: 0.5rem;
+}
+#appCard:hover {
+    border-color: var(--bs-card-border-color);
+    background-color: var(--green-5);
+}
+#appCard:active {
+    border-color: #fff;
+    background-color: var(--green-0);
+}
+
+/* Contact links */
+.contactLink:hover {
+    color: #FFFFFF;
+}
+.contactIcon {
+    fill: var(--body-text-color);
+}
+.contactIcon:hover {
+    fill: #FFFFFF;
+}
+
+/* Projects links */
+.link-text:hover {
+    color: #FFFFFF;
+}
+.linkIcon {
+    fill: var(--green-6);
+}
+.linkIcon:hover {
+    fill: #FFFFFF;
+}
+
+/* Test for arrow down */
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-left: 7px solid var(--body-text-color);
+  border-bottom: 7px solid var(--body-text-color);
+  transform: rotate(-45deg) translateX(-50%);
+  animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0) rotate(-45deg); }
+  40% { transform: translate(-50%, 10px) rotate(-45deg); }
+  60% { transform: translate(-50%, 5px) rotate(-45deg); }
+}
+
+/**/
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease;
+}
+.overlay.open{
+    opacity:1;
+    pointer-events:auto;
+}
+.panel{
+    position:fixed;
+    top:80px;
+    right: 0;
+    height:85%;
+    /*height:min(768px, 75vh);*/
+    width:min(1024px, 95vw);
+    border: 4px solid #007e7e;
+    /*border: 4px solid var(--body-text-color);*/
+    /*border: 4px solid #FFFFFF;*/
+    border-radius: 10px;
+    background:var(--body-background-color);
+    box-shadow: 0px 0px 100px #004444;
+    /*box-shadow:-30px 30px 50px var(--body-text-color);*/
+    /*box-shadow:-30px 30px 50px #FFFFFF;*/
+    transform:translateX(100%);
+    transition:transform .3s ease;
+    display:flex;flex-direction:column;
+}
+.panel.open{transform:translateX(0);} 
+.panel-header{padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.panel-content{padding:20px;overflow:auto}
+
+
+/* CKEditor 5 */
+.ck-editor__editable,
+.ck-editor__editable_inline {
+    height: 720px;   /* opcionális: kezdeti magasság */
+    overflow-y: auto;    /* belső görgetés */
+}
+
+.ck {
+    --ck-color-base-background: var(--green-3);      
+    --ck-color-toolbar-background: var(--green-0);   
+    --ck-color-base-border: var(--green-3);          
+    --ck-color-text: var(--green-2);
+    --ck-border-radius: 10px;                
+}
+
+.ck:focus {
+    --ck-color-base-background: #FFFFFF;
+    
+}
+
+.ck:hover {
+    --ck-color-text: var(--green-0);
+    --ck-color-button-default-background: transparent;
+    --ck-color-button-default-hover-background: var(--green-2);
+    --ck-color-button-default-active-background: var(--green-2);
+    --ck-color-button-default-disabled-background: transparent;
+    --ck-color-button-on-background: var(--green-2);
+    --ck-color-button-on-hover-background: var(--green-2);
+    --ck-color-button-on-active-background: var(--green-2);
+    --ck-color-button-on-disabled-background: var(--green-2);
+    --ck-color-button-on-color: var(--green-0);
+    --ck-color-button-action-background: var(--green-2);
+    --ck-color-button-action-hover-background: var(--green-2);
+    --ck-color-button-action-active-background: var(--green-2);
+    --ck-color-button-action-disabled-background: var(--green-2);
+    --ck-color-button-action-text: var(--green-0);
+}
+
+.p_description { 
+  display: flow-root;   /* automatikus clearfix a floatokhoz */
+}
+/* .p_description::after{
+  content:"";
+  display:block;
+  clear:both;
+} */
+.p_description h4 {
+    line-height: 1.6;
+}
+
+.clamp-4{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;   /* hány sor maradjon */
+  overflow: hidden;
+}
+
+
+/* Alap képek */
+.ck-content .image { display:block; }
+.ck-content .image img { display:block; max-width:100%; height:auto; }
+
+.ck-content img {
+    height:auto !important
+}
+
+/* Körbefolyatás balra/jobbra (CKE osztályok) */
+.ck-content .image.image-style-align-left,
+.ck-content .image.image-style-side {
+  float:left;
+  margin:0 1rem 1rem 0;
+}
+.ck-content .image.image-style-align-right{
+  float:right;
+  margin:0 0 1rem 1rem;
+}
+.ck-content .image-style-align-center {
+    margin-left: auto;
+    margin-right: auto
+}
+/* Resize-elt képek (CKE width:% inline style-t használ a figure-n) */
+.ck-content .image.image_resized{ max-width:100%; }
+.ck-content .image.image_resized > img{ width:100%; }
+
+/* Clearfix, hogy a float-ok ne borítsák a layoutot */
+.ck-content::after{ content:""; display:block; clear:both; }

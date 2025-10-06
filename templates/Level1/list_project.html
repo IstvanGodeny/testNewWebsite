@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block title %}
+    Edit or Delete Project
+{% endblock %}
+
+{% block link %}
+
+{% endblock %}
+
+{% block script %}{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{%block nav_items%}
+        
+        <li class="nav-item me-5">
+            <a class="nav-link"  href="{{url_for('home')}}">Home</a>
+        </li>
+
+        <li class="nav-item me-5">
+            <a class="nav-link"  href="{{url_for('add_project')}}">Add a project</a>
+        </li>
+
+{%endblock%}
+
+{% block content %}
+
+    <main class="main-position">
+        {%for project in all_projects:%}
+            {%if project:%}
+                <div class="col-12">
+                    <div class="row ps-5 pb-5">
+                        
+                        
+                                <h4>{{project.title}}</h4>
+                                <h5>{{project.text}}</h5>
+                                <div class="col">
+                                    <!--a href="/edit_project/{{ project.id }}" class="btn btn-custom btn-custom-text"-->
+                                    <a href="{{url_for('edit_project', project_id=project.id, project_name=project.name)}}" class="btn btn-custom btn-custom-text">
+                                        Edit
+                                    </a>
+                                    <!--a href="/edit_project/{{ project.id }}" class="btn btn-custom btn-custom-text"-->
+                                    <a
+                                        class="btn btn-custom btn-custom-text"
+                                        data-title="! Warning !"
+                                        data-panel-url="{{url_for('delete_confirm_project', project_id=project.id)}}"
+                                        data-panel-query="delete_project"
+                                        data-panel-value="{{project.name}}">
+                                        Delete
+                                    </a>
+                                </div>
+                        
+
+                    </div>
+                </div>
+        {%endif%}
+        {% else: %}
+            <div>
+            <h1>
+                There are no projects yet.
+            </h2>
+            </div>
+        {%endfor%}
+            
+                
+        
+    </main>
+
+{% endblock %}

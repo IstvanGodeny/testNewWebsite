@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{%block nav_items%}
+    {% if active_page == "about" %}
+
+        <li class="nav-item me-5">
+            <a class="nav-link" href="{{url_for('home')}}">Home</a>
+        </li>
+        
+        <li class="nav-item me-5">
+            <a class="nav-link {% if active_page == 'about' %}active{% endif %}" href="{{url_for('about')}}">About</a>
+        </li>
+        
+    {%endif%}
+{%endblock%}
+
+{% block content %}
+    <main class="main-position">
+        <div class="ms-6">
+            <h1 style="padding-top: 50px;">_> About Istvan Godeny.</h1>
+            
+            <h4 style="margin-top: 5rem">I am a persistent and motivated Python developer who has learned programming through self-study and continuous improvement. Software development is my passion: building efficient, well-designed programs that solve real problems. I believe code is not just a tool but a form of creative expression, where elegance and simplicity matter most.</h4>
+
+            <h4 style="margin-top: 2.5rem">Before turning to programming, I worked in logistics, climbing the ladder from warehouse operative to manager. This experience taught me perseverance, organization, and the value of teamwork. Now, I apply the same determination and work ethic to the world of software development..</h4>
+
+            <h4 style="margin-top: 2.5rem">My main interests include machine learning, artificial intelligence, and cybersecurity. My long-term goal is to combine these fields to create effective digital defense tools. Outside of coding, I enjoy learning the ukulele, fixing cars as a hobby, and spending time in nature.</h4>
+
+            <h4 style="margin-top: 2.5rem">If you would like to see how I work and what I have built so far, explore my favorite projects <!--<a href='http://127.0.0.1:5000/#favorite_projects'>--><a href="https://istvang.pythonanywhere.com/#favorite_projects"> here </a> or all of my jobs on GitHub. And if you think we could collaborate, feel free to reach out - I would be happy to talk about new ideas, projects, and opportunities.</h4>
+
+            <h4 style="margin-top: 2.5rem">“Be brave to start, strong to continue, and dedicated to reach your goal.”</h4>
+
+            <div>
+                <a 
+                    href="https://github.com/IstvanGodeny/Istvan_Python_Projects"
+                    class="btn btn-custom btn-custom-text mt-4 me-2" 
+                    target="_blank">
+                    Projects on GitHub
+                </a>
+
+                <!--<a href="http://127.0.0.1:5000/#contact" style="margin-top:5rem; margin-left: 2rem; margin-bottom: 5rem" class="btn btn-custom btn-custom-text">-->
+                <a 
+                    href="https://istvang.pythonanywhere.com/#contact" 
+                    class="btn btn-custom btn-custom-text mt-4">
+                    Reach out
+                </a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

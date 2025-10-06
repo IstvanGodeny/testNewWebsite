@@ -1,0 +1,15 @@
+
+<article>
+    {% for project in all_projects: %}
+        {%if project_id == project.id:%}
+            <h3>Are you sure you want to delete {{project.title}} project?</h3>
+            <h3>This operation can not be undo!</h3>
+            <div class="col">
+                <a href="{{url_for('delete_project', project_id=project.id)}}" class="btn btn-custom btn-custom-text">
+                    Confirm
+                </a>
+            </div>
+        {%endif%}
+    {% endfor %}
+</article>
+

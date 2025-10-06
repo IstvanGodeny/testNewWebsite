@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Istvan's Portfolio Website
+{% endblock %}
+
+{% block link %}
+
+{% endblock %}
+
+{% block script %}{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{%block nav_items%}
+    {% if active_page == "#home" %}
+        
+        <li class="nav-item me-5">
+            <a class="nav-link" href="#home">Home</a>
+        </li>
+
+        <li class="nav-item me-5">
+            <a class="nav-link" href="#about">About</a>
+        </li>
+
+        <li class="nav-item me-5">
+            <a class="nav-link" href="#credentials">Credentials</a>
+        </li>
+
+        <li class="nav-item me-5">
+            <a class="nav-link" href="#favorite_projects">Favorite Projects</a>
+        </li>
+
+        <li class="nav-item me-5">
+            <a class="nav-link" href="#contact">Contact</a>
+        </li>
+
+    {%endif%}
+{%endblock%}
+
+{% block content %}
+
+    <main class="main-position">
+
+        <!-- Introduction, welcome -->
+        <div class="ms-6 intro">
+            <div>
+                <h1>_> Hi, I'm Istvan,</h1>
+                <h3>and I'm a Python Developer</h3>
+            </div>
+
+            <div class="scroll-down" style="float: right"></div>
+
+        </div>
+        
+
+        <!-- About Istvan Section -->
+        <div id="about" class="ms-6">
+            <h1 style="margin-top: 10rem; margin-bottom: 5rem; padding-top: 4rem;">_> About Istvan Godeny</h1>
+
+            <h4 style="line-height: 1.6">I am a motivated and goal-oriented Python developer, passionate about creating efficient and creative solutions. I’ve built my skills through self-learning, persistence, and continuous growth. My main interests are backend development, machine learning, and cybersecurity.</h4>
+
+            <!--a style="margin-top: 5rem" href="{{ url_for('about') }}"
+                class="btn btn-custom btn-custom-text">More About Me</a-->
+            <a
+                style="margin-top: 5rem"
+                class="btn btn-custom btn-custom-text" 
+                data-title="About Istvan"
+                data-panel-url="/about/fragment"
+                data-panel-query="about"
+                data-panel-value="about">
+                More About Me
+            </a>
+
+        </div>
+
+        <!-- Credentials Section -->
+        <div class="ms-6">
+            <h1 id="credentials" style="margin-top: 10rem; padding-top: 4rem;">_> Credentials</h1>
+
+            <!-- List of the icons -->
+            <div class="icon-container" style="margin-top: 5rem">
+                <span data-tooltip="Python">
+                    <img src="{{ url_for('static', filename='assets/svg/icons/Python.svg') }}" width="48" height="48" alt="SVG Icon">
+                </span>
+                <span data-tooltip="Kivy">
+                    <img src="{{ url_for('static', filename='assets/svg/icons/Kivy.svg') }}" width="48" height="48" alt="SVG Icon">
+                </span>
+                <span data-tooltip="Bootstrap">
+                    <img src="{{ url_for('static', filename='assets/svg/icons/Bootstrap.svg') }}" width="48" height="48" alt="SVG Icon">
+                </span>
+                <span data-tooltip="Jinja">
+                    <img src="{{ url_for('static', filename='assets/svg/icons/Jinja.svg') }}" width="48" height="48" alt="SVG Icon">
+                </span>
+                <span data-tooltip="Selenium">
+                    <img src="{{ url_for('static', filename='assets/svg/icons/Selenium.svg') }}" width="48" height="48" alt="SVG Icon">
+                </span>
+                <span data-tooltip="Flask">
+                    <img src="{{ url_for('static', filename='assets/svg/icons/Flask.svg') }}" width="48" height="48" alt="SVG Icon">
+                </span>
+                <span data-tooltip="HTML5">
+                    <img src="{{ url_for('static', filename='assets/svg/icons/HTML5.svg') }}" width="48" height="48" alt="SVG Icon">
+                </span>
+                <span data-tooltip="CSS3">
+                    <img src="{{ url_for('static', filename='assets/svg/icons/CSS3.svg') }}" width="48" height="48" alt="SVG Icon">
+                </span>
+            </div>
+
+            <div>
+                <table style="margin-top: 5rem;">
+                    <tbody>
+                        <tr valign="top">
+                            <td>
+                                <div>
+                                    <h3>Education</h3>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <h4>Python Pro Bootcamp</h4>
+                                    <h5 style="color: white;">London, UK (2023-2025) - Udemy</h5>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div>
+                                    <h4>Software Engineering</h4>
+                                    <h5 style="color:white;">Szeged, Hungary - University of Szeged</h5>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr valign="bottom">
+                            <td>
+                                <div style="margin-top: 3rem">
+                                    <h3>Skills</h3>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <h4>Python - Intermediate</h4>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                                <div>
+                                    <h4>C, Java, HTML, CSS - Beginner</h4>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div>
+                                    <h4>Make efficient algorithms</h4>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div>
+                                    <h4>Using version control (git, GitHub)</h4>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- Favorite Projects Section -->
+        <div id="favorite_projects" class="ms-6">
+            <h2 style="margin-top: 10rem; margin-bottom: 3rem; padding-top: 4rem;">_> My Favorite Projects</h2>
+            <div class="row mt-5">
+                {% for project in all_projects: %}
+                    {%if project.favorite:%}
+                        <div class="col-xxl-6 mt-2" style="margin-bottom: 2rem; padding: 2rem">
+                            <div class="row">
+                                <div class="col-1 me-4">
+                                    {%if project.icon: %}
+                                    <span>
+                                        <img id="appIcon" src="{{project.icon}}" alt="SVG Icon">
+                                    </span>
+                                    {%endif%}
+                                </div>
+                                <div class="col">
+                                    <h3 class="mb-4">{{project.title}}</h3>
+                                    <div id="appCard" class="card-custom">
+                                        <button
+                                            type="button" 
+                                            class="link-text linkIcon" 
+                                            data-open="{{project.name}}"
+                                            data-title="{{project.title}}"
+                                            data-panel-url="/project/{{ project.name }}/fragment"
+                                            data-panel-query="project"
+                                            data-panel-value="{{project.name}}"
+                                            style="text-decoration:none; border:0; background:transparent; padding:0; cursor:pointer;">
+                                            {%if project.screenshot: %}
+                                            <div class="mb-3">
+                                                <img class="screenshot" src="{{ project.screenshot }}" alt="{{ project.title }} screenshot" style="width:100%;">
+                                            </div>
+                                            {%endif%}
+                                            <div style="font-weight:600">{{ project.title }}</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {%endif%}
+                {% endfor %}
+            </div>
+            <a
+                    style="margin-top: 1rem"
+                    class="btn btn-custom btn-custom-text"
+                    data-title="All projects"
+                    data-panel-url="/projects/fragment"
+                    data-panel-query="projects"
+                    data-panel-value="projects">
+                    All projects
+                </a>
+
+        </div>
+
+        <!-- Conatct Section -->
+        <div class="ms-6" style="margin-bottom: 10rem">
+            <h1 id="contact" style="margin-top: 5rem; margin-bottom: 5rem; padding-top: 4rem;">_> Contact</h1>
+
+            <h2 style="mb-4">
+                Istvan Godeny
+            </h2>
+
+            <h3 class="mb-5">
+                Python Developer
+            </h3>
+
+            <div class="row mb-3">
+                <div class="col-auto">
+                <span>
+                    <img src="{{ url_for('static', filename='assets/svg/map-location.svg') }}" width="35" height="35" alt="SVG Icon">
+                </span>
+                </div>
+                <div class="col">
+                <h3 class="contact-text">London, UK</a></h3>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-auto">
+                    <span>
+                        <img src="{{ url_for('static', filename='assets/svg/send-email.svg') }}" width="35" height="35" alt="SVG Icon">
+                    </span>
+                </div>
+
+                <div class="col">
+                    <h3 class="contact-text">
+                        <a class="contactLink contactIcon" href="{{ url_for('contact') }}" style="text-decoration: none">Message me
+                            <svg  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <polygon points="102.296,59.957 42.264,119.99 25.605,103.34 85.639,43.299 "/> <polygon points="85.74,76.71 25.715,16.653 42.373,0.011 102.391,60.067 "/> </g>
+                            </svg>
+
+                        </a>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-auto">
+                <span>
+                    <img src="{{ url_for('static', filename='assets/svg/linkedin-linked-in.svg') }}" width="35" height="35" alt="SVG Icon">
+                </span>
+                </div>
+                <div class="col">
+                <h3 class="contact-text">
+                    <a class="contactLink contactIcon" href="https://www.linkedin.com/in/istvan-godeny/" style="text-decoration: none" target="_blank">Visit my LinkedIn
+                        <svg  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g id="SVGRepo_iconCarrier"> <polygon points="102.296,59.957 42.264,119.99 25.605,103.34 85.639,43.299 "/> <polygon points="85.74,76.71 25.715,16.653 42.373,0.011 102.391,60.067 "/> </g>
+                        </svg>                        
+                    </a>
+                </h3>
+                </div>
+            </div>
+        </div>
+        <div id="bottom" style="position: relative; top:-1px; height:1px;"></div>
+    </main>
+
+{% endblock %}

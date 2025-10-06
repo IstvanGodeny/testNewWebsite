@@ -1,0 +1,31 @@
+<article>
+    <div class= "row">
+      {% for project in all_projects %}
+          <div class="col-md-6 col-xxl-4">
+              <div class="row ps-5 pb-5">
+                  <!--a href="/project/{{ project.name }}" class="link link-text">
+                    <h4>{{project.title}}</h4>
+                    <p>{{project.text}}</p>
+                  </a-->
+
+                  <div id="appCard" class="card-custom">
+                      <a
+                          href="/project/{{ project.name }}"
+                          type="button" 
+                          class="link-text linkIcon" 
+                          style="text-decoration:none; border:0; background:transparent; padding:0; cursor:pointer;">
+                          {%if project.screenshot: %}
+                          <div class="mb-3">
+                              <img class="screenshot" src="{{ project.screenshot }}" alt="{{ project.title }} screenshot" style="width:100%;">
+                          </div>
+                          {%endif%}
+                          <div style="font-weight:600">{{ project.title }}</div>
+                        </a>
+                  </div>
+                  
+              </div>
+          </div>
+      {% endfor %}
+    </div>
+  
+</article>

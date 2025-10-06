@@ -1,0 +1,42 @@
+{% for project in all_projects: %}
+  {% if active_page == project.name: %}
+    <article>
+      <!--<h3>{{ project.link_text }}</h3>
+
+      <{% if project.screenshot %}
+        <img src="{{ project.screenshot }}" alt="{{ project.title }} screenshot" style="width:75%;height:auto;border-radius:12px;margin:12px 0 16px;">
+      {% endif %}-->
+
+      {% if project.text: %}
+        <p style="margin:.5rem 0 1rem;">{{ project.text }}</p>
+      {% endif %}
+
+        {%if project.video:%}
+            <div class="mb-5" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+                <iframe
+                    src="{{project.video}}"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    loading="lazy"
+                    title="{{project.title}} - Screen recording">
+                </iframe>
+            </div>
+        {%endif%}
+
+        {%if project.description:%}
+          <div class="p_description clamp-4">
+            {{project.description|safe}}
+          </div>
+        {%endif%}
+        
+
+      <div class="mt-5">
+        <a href="/project/{{ project.name }}" class="btn btn-custom btn-custom-text">
+          Open full project page
+        </a>
+      </div>
+
+    </article>
+  {% endif %}
+{% endfor %}
