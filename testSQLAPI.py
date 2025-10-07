@@ -8,7 +8,7 @@ from werkzeug.utils import secure_filename
 from wtforms import TextAreaField
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import Integer, String, Boolean
+from sqlalchemy import Integer, String, Boolean, Text
 from wtforms import StringField, SubmitField, TextAreaField, RadioField
 from wtforms.validators import DataRequired, Email, InputRequired
 from datetime import datetime
@@ -79,15 +79,15 @@ db.init_app(app)
 # Create the table -- Initialization
 class Projects(db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    name: Mapped[str] = mapped_column(String, nullable=True)
-    title: Mapped[str] = mapped_column(String, nullable=True)
+    name: Mapped[str] = mapped_column(Text, nullable=True)
+    title: Mapped[str] = mapped_column(Text, nullable=True)
     favorite: Mapped[bool] = mapped_column(Boolean, nullable=True)
-    github: Mapped[str] = mapped_column(String, nullable=False)
-    icon: Mapped[str] = mapped_column(String, nullable=False)
-    screenshot: Mapped[str] = mapped_column(String, nullable=False)
-    video: Mapped[str] = mapped_column(String, nullable=False)
-    text: Mapped[str] = mapped_column(String, nullable=False)
-    description: Mapped[str] = mapped_column(String, nullable=False)
+    github: Mapped[str] = mapped_column(Text, nullable=False)
+    icon: Mapped[str] = mapped_column(Text, nullable=False)
+    screenshot: Mapped[str] = mapped_column(Text, nullable=False)
+    video: Mapped[str] = mapped_column(Text, nullable=False)
+    text: Mapped[str] = mapped_column(Text, nullable=False)
+    description: Mapped[str] = mapped_column(Text, nullable=False)
 
     # The objects identify by the id
     def __repr__(self):
