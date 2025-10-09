@@ -19,7 +19,13 @@
                               <img class="screenshot" src="{{ project.screenshot }}" alt="{{ project.title }} screenshot" style="width:100%;">
                           </div>
                           {%endif%}
-                          <div style="font-weight:600">{{ project.title }}</div>
+                          
+                          <div style="font-weight:600">
+                            <span>
+                                <img id="smallAppIcon" src="{{project.icon}}" alt="SVG Icon">
+                            </span>{{ project.title }}
+                          </div>
+                          
                         </a>
                   </div>
                   
