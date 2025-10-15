@@ -10,6 +10,7 @@ It highlights applications such as **Note Application**, **Tic Tac Toe Game**, a
 - Showcases multiple Python projects with screenshots and descriptions
 - Responsive design using **Bootstrap** and custom CSS
 - Interactive **Lottie animations** and SVG icons
+- Sliding Windows
 - Organized structure with `templates/` and `static/` folders
 - Ready for deployment with **Procfile** and `requirements.txt`
 - Optimized for presenting projects professionally online
@@ -39,6 +40,8 @@ It highlights applications such as **Note Application**, **Tic Tac Toe Game**, a
 
 ├───── js [folder]             # Folder for javascripts
 
+├───── ckeditor5 [folder]      # Folder for ckeditor
+
 ├───── scss [folder]
 
 ├── templates [folder]         # SQLite database (auto-generated)
@@ -46,6 +49,8 @@ It highlights applications such as **Note Application**, **Tic Tac Toe Game**, a
 ├───── Level 1 [folder]         # Level1 HTML files
 
 ├───── Level 2 [folder]        # Level2 HTML files
+
+├───── Level 3 [folder]        # Level2 HTML files, sliding windows
 
 ├───── base.html               # Base of the webpages
 
