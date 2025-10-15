@@ -29,7 +29,7 @@ It highlights applications such as **Note Application**, **Tic Tac Toe Game**, a
 ---
 ## 📂 Project Structure
 
-├── main.py                    # Application entry point
+├── testSQLAPI.py                    # Application entry point
 
 ├── static [folder]
 
@@ -43,7 +43,7 @@ It highlights applications such as **Note Application**, **Tic Tac Toe Game**, a
 
 ├── templates [folder]         # SQLite database (auto-generated)
 
-├───── Level1 [folder]         # Level1 HTML files
+├───── Level 1 [folder]         # Level1 HTML files
 
 ├───── Level 2 [folder]        # Level2 HTML files
 
