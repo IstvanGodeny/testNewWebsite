@@ -299,4 +299,4 @@ def upload():
 
 ## Run the server with debug mode
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
